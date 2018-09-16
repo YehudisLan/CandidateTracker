@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "AddCandidateForm";
+}
+
+<h2>Add Candidate</h2>
+<div class="container">
+    <form action="/home/AddCandidate" method="post">
+        <input type="text"name="FirstName" class="form-control" placeholder="First Name" />
+        <input type="text" name="LastName" class="form-control" placeholder="Last Name" />
+        <input type="text" name="Email" class="form-control" placeholder="Email" />
+        <input type="text" name="Phone" class="form-control" placeholder="Phone Number" />
+        <input  type="hidden" name="Status" value="0" />
+        <textarea name="notes" class="form-control"></textarea>
+        <button>Submit</button>
+    </form>
+</div>
+

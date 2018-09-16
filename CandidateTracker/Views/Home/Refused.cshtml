@@ -1,0 +1,29 @@
+﻿@using CandidateTracker
+@using WebsiteTracker.Data
+@model IEnumerable<Candidate>
+<div class="container">
+    <button class="btn btn-success toggle-notes">Toggle</button>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th></th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th style="display:none;" class="notes-toggle">Notes</th>
+        </tr>
+        @foreach (Candidate c in Model)
+        {
+            <tr>
+                <td><a href="/home/ViewDetails?id=@c.Id" class="btn-link">View Details</a></td>
+                <td>@c.FirstName</td>
+                <td>@c.LastName</td>
+                <td>@c.Phone</td>
+                <td>@c.Email</td>
+                <td style="display:none;" id="notes" class="notes-toggle">@c.Notes</td>
+            </tr>
+        }
+    </table>
+</div>
+@section scripts{
+    <script src="~/Scripts/Toggle.js"></script>}
