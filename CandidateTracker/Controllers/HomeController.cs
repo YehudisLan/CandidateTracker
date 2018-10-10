@@ -51,10 +51,10 @@ namespace CandidateTracker.Controllers
             db.Confirm(id);
         }
         [HttpPost]
-        public void RefusePerson(int id)
+        public void RefusePerson(Candidate c)
         {
             DBManager db = new DBManager(Properties.Settings.Default.Constr);
-            db.Refuse(id);
+            db.Refuse(c.Id);
         }
         public ActionResult GetCounts()
         {
@@ -62,5 +62,6 @@ namespace CandidateTracker.Controllers
             var counts = db.GetCounts();
             return Json(counts,JsonRequestBehavior.AllowGet);
         }
+       
     }
 }

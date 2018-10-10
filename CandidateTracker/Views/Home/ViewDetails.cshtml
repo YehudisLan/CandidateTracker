@@ -5,13 +5,14 @@
     <h3>Name:  @Model.FirstName @Model.LastName</h3>
     <h3>Email:  @Model.Email</h3>
     <h3>Phone:  @Model.Phone</h3>
-    <h3>Status: @Model.Status</h3>
+    <h3>Status: <span id="status">@Model.Status</span></h3>
         <h3>Notes:  </h3>
         <h4>@Model.Notes</h4>
     <button class="btn confirm btn-success" data-candidate-id="@Model.Id">Confirm</button>
     <button class="btn refuse btn-danger" data-candidate-id="@Model.Id">Refuse</button>
 </div>
 @section scripts{
-    <script src="~/Scripts/ConfirmedRefused.js"></script>
+    @*<script src="~/Scripts/ConfirmedRefused.js"></script>*@
+<script src="~/Scripts/refuseConfirm.js"></script>
     }
     
